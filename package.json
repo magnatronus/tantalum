@@ -1,8 +1,12 @@
 {
   "name": "tantalum",
-  "version": "1.0.0",
-  "description": "place holder",
+  "version": "1.0.1",
+  "description": "A CLI that can be used to generate a development environment for off-line serverless AWS nodejs projects",
   "main": "./lib/tantalum",
+  "bin": {
+    "tantalum": "./bin/tantalum",
+    "tlm": "./bin/tantalum"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +14,26 @@
     "name": "SpiralArm Consulting ltd",
     "email": "projects@spiralarm.uk"
   },
+  "keywords": [
+    "cli",
+    "tantalum",
+    "aws",
+    "serverless",
+    "local",
+    "offline"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/magnatronus/tantalum.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "fs-extra": "^7.0.1",
+    "js-yaml": "^3.13.1",
+    "yargs": "^13.2.2"
+  }
 }

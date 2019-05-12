@@ -1,0 +1,8 @@
+{
+    "title": "Hello world",
+    "version": 1.00,
+    "payload": {
+        "id": 1,
+        "description": "Hello from a serverless world"
+    }
+}

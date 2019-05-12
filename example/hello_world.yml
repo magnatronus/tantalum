@@ -1,0 +1,39 @@
+functions:
+
+  list:
+    handler: handler.list
+    events:
+      - http:
+          path: list
+          method: get
+          cors: true
+
+  queueprocess:
+    handler: handler.queueprocess
+    events:
+      - sns:
+         topicName: upload-topic
+
+  postprocess:
+    handler: handler.postprocess
+    events:
+      - s3: 
+          bucket: upload-bucket
+          event: s3:ObjectCreated:*
+
+resources:
+
+  Resources:
+    uploadTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: upload-log
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
