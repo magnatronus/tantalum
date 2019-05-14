@@ -58,6 +58,8 @@ The **helloworld** project that will be created has a simple spec:
 
 ## History
 
+### 1.0.1 - Initial MVP release
+
 
 ## Acknowledgements
 - [serverless](https://serverless.com/)
